@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.messaging.Message
 import reactor.core.publisher.EmitterProcessor
 import reactor.core.publisher.Flux
-import java.util.function.Consumer
 import java.util.function.Supplier
 
 @Configuration
@@ -22,13 +21,6 @@ open class MessageHandler {
     fun send(): Supplier<Flux<Message<*>>> {
         return Supplier {
             processor
-        }
-    }
-
-    @Bean
-    fun receive(): Consumer<String> {
-        return Consumer<String> {
-            logger.info(it)
         }
     }
 }
