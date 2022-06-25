@@ -1,5 +1,6 @@
-package com.example.loggingconsumer
+package com.moniquetrevisan.loggingconsumer.application.web.controller
 
+import com.moniquetrevisan.loggingconsumer.MessageHandler
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.support.MessageBuilder
 import org.springframework.web.bind.annotation.PostMapping
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/sendMessage")
 class MessageController {
 
     @PostMapping

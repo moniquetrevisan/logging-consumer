@@ -1,4 +1,4 @@
-package com.example.loggingconsumer
+package com.moniquetrevisan.loggingconsumer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
