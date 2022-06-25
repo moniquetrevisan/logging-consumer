@@ -1,6 +1,6 @@
 package com.moniquetrevisan.loggingconsumer.application.web.controller
 
-import com.moniquetrevisan.loggingconsumer.MessageHandler
+import com.moniquetrevisan.loggingconsumer.application.config.MessageHandler
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.support.MessageBuilder
 import org.springframework.web.bind.annotation.PostMapping
