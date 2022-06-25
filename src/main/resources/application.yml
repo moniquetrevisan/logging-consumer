@@ -1,0 +1,27 @@
+server:
+  port: 9001
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition: send;receive;
+      bindings:
+        send-out-0:
+          destination: myExchange
+          content-type: application/json
+        receive-in-0:
+          destination: myExchange
+          content-type: application/json
+          group: input
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: true
+        bindings:
+          send-out-0:
+            producer:
+              routing-key-expression: 'example'
+          receive-in-0:
+            consumer:
+              routing-key-expression: example
