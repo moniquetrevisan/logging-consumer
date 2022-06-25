@@ -1,6 +1,6 @@
 package com.moniquetrevisan.loggingconsumer.application.web.controller
 
-import com.moniquetrevisan.loggingconsumer.application.config.MessageHandler
+import com.moniquetrevisan.loggingconsumer.resources.messaging.producer.SampleProducer
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.support.MessageBuilder
 import org.springframework.web.bind.annotation.PostMapping
@@ -14,7 +14,7 @@ class MessageController {
 
     @PostMapping
     fun sendMessage(@RequestBody body: String): ResponseEntity<Unit> {
-        MessageHandler.processor.onNext(MessageBuilder.withPayload(body).build())
+        SampleProducer.processor.onNext(MessageBuilder.withPayload(body).build())
         return ResponseEntity.ok().build()
     }
 }
